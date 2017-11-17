@@ -27,7 +27,7 @@ class Nav extends React.Component {
               <img onClick={() => this.changePage(this.props.url.query.page ? this.props.url.query.page : '', 'th')} src="/static/assets/th.png" className="flag-ball" />
             </li>
             <li className="nav-item">
-              <img onClick={() => this.changePage(this.props.url.query.page, 'en')}  src="/static/assets/en.png" className="flag-ball" />
+              <img onClick={() => this.changePage(this.props.url.query.page ? this.props.url.query.page : '', 'en')}  src="/static/assets/en.png" className="flag-ball" />
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">

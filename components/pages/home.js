@@ -1,22 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeLang } from '../../redux/actions/languageAction';
+import { sendProp } from '../../redux/actions/languageAction';
 
 class Home extends React.Component {
-  sendProp(){
-    this.props.dispatch(changeLang(this.props.lang.language.lang, {
-      joox: 'I am a prop!!!!'
+  sendProp() {
+    this.props.dispatch(sendProp({
+      joox: 'I am prop sent down'
     }))
   }
   render() {
     return (
       <div>
         <div className="container">
+          <br />
           <div className="row">
             <div className="col text-center">
-              {this.props.lang.language.home}
-              <br />
-              <button onClick={()=>this.sendProp()}>Send prop to language</button>
+              <div className="jumbotron">
+                <h1 className="display-3">Joox Site</h1>
+                <p className="lead">{this.props.lang.language.poc}</p>
+                <hr className="my-4" />
+                <p className="lead">
+                <button onClick={()=>this.sendProp()} className="btn btn-primary btn-lg">Send Props</button>
+                </p>
+              </div>
             </div>
           </div>
 
