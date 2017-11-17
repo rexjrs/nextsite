@@ -1,7 +1,10 @@
-const en = {
-    lang: 'en',
-    home: 'Home',
-    about: 'About'
+const en = (props)=> {
+    return {
+        lang: 'en',
+        home: 'Home',
+        about: 'About',
+        joox: 'Joox'
+    }
 }
 
 export default en;

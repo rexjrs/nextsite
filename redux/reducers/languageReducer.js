@@ -1,11 +1,11 @@
-import languages from '../../config/languages/languages';
+import { getLang } from '../../config/languages/languages';
 
 export default function reducer(state = {
-    language: languages['en']
+    language: getLang('en', null)
 }, action) {
     switch (action.type) {
         case "changeLang":
-            return { ...state, language: languages[action.payload] }
+            return { ...state, language: getLang(action.payload, action.props) }
     }
     return state
 }

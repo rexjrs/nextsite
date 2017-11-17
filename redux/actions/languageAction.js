@@ -1,6 +1,7 @@
-export function changeLang(value){
+export function changeLang(value, props){
     return {
         type: "changeLang",
-        payload: value
+        payload: value,
+        props: props
     }
 }

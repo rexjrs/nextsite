@@ -7,23 +7,24 @@ class Nav extends React.Component {
   }
 
   render() {
+    const lang = this.props.lang.language;
     return (
       <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a className="navbar-brand" onClick={() => this.changePage('', this.props.lang.language.lang)}>Joox</a>
+        <a className="navbar-brand" onClick={() => this.changePage('', lang.lang)}>Joox</a>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a className="nav-link" onClick={() => this.changePage('', this.props.lang.language.lang)}>{this.props.lang.language.home}</a>
+              <a className="nav-link" onClick={() => this.changePage('', lang.lang)}>{lang.home}</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" onClick={() => this.changePage('about', this.props.lang.language.lang)}>{this.props.lang.language.about}</a>
+              <a className="nav-link" onClick={() => this.changePage('about', lang.lang)}>{lang.about}</a>
             </li>
             <li className="nav-item">
-              <img onClick={() => this.changePage(this.props.url.query.page, 'th')} src="/static/assets/th.png" className="flag-ball" />
+              <img onClick={() => this.changePage(this.props.url.query.page ? this.props.url.query.page : '', 'th')} src="/static/assets/th.png" className="flag-ball" />
             </li>
             <li className="nav-item">
               <img onClick={() => this.changePage(this.props.url.query.page, 'en')}  src="/static/assets/en.png" className="flag-ball" />
