@@ -23,7 +23,7 @@ export default class Index extends React.Component {
     checkIndex(this.props)
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     checkLang(this.props, store)
   }
 
@@ -33,7 +33,7 @@ export default class Index extends React.Component {
         <Head />
         <Provider store={store}>
           <div>
-            <Nav />
+            <Nav {...this.props}/>
             <Bundle url={this.props.url.query} />
             <br />
             <Media />

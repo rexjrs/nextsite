@@ -22,6 +22,12 @@ class Nav extends React.Component {
             <li className="nav-item">
               <a className="nav-link" onClick={() => this.changePage('about', this.props.lang.language.lang)}>{this.props.lang.language.about}</a>
             </li>
+            <li className="nav-item">
+              <img onClick={() => this.changePage(this.props.url.query.page, 'th')} src="/static/assets/th.png" className="flag-ball" />
+            </li>
+            <li className="nav-item">
+              <img onClick={() => this.changePage(this.props.url.query.page, 'en')}  src="/static/assets/en.png" className="flag-ball" />
+            </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="text" placeholder="Search" />
@@ -29,7 +35,11 @@ class Nav extends React.Component {
           </form>
         </div>
         <style jsx>{`
-
+          .flag-ball{
+            margin-top: 10px;
+            width: 20px;
+            margin-left: 10px;
+          }
         `}</style>
       </nav>
     )
