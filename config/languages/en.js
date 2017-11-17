@@ -1,9 +1,10 @@
 const en = (props)=> {
+    const prop = {...props}
     return {
         lang: 'en',
         home: 'Home',
         about: 'About',
-        joox: 'Joox'
+        joox: `Joox ${prop.joox ? prop.joox : ''}`
     }
 }
 

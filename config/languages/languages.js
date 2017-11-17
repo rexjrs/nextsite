@@ -1,11 +1,11 @@
 import en from './en';
 import th from './th';
 
-const language = {
-    en: en(),
-    th: th()
-}
-
 export const getLang = (lang, props) => {
-    return language[lang]
+    switch(lang){
+        case "th":
+            return th(props)
+        case "en":
+            return en(props)
+    }
 }
